@@ -3,11 +3,11 @@
 * [Akka是什么](01_What_is_Akka.md)
   * Akka实现了独特的混合
   * Scala 和 Java API
-  * 使用Akka的两种方式
+  * Akka能以两种不同的方式使用
   * 商业支持
 * [为什么使用Akka?](02_Why_Akka.md)
   * Akka平台提供哪些有竞争力的特性?
-  * Akka特别适合哪些用例?
+  * Akka特别适合哪些用例？
 * [入门](03_Getting_Started.md)
   * 前提条件
   * 入门指南和模板项目
@@ -26,7 +26,7 @@
   * 不要使用scala编译器的 -optimize 标记
   * 从源码编译
   * 需要帮助?
-* [必须的“Hello World”](04_The_Obligatory_Hello_World.md)
+* [必须的 Hello World](04_The_Obligatory_Hello_World.md)
 * [使用案例和部署场景](05_Use-case_and_Deployment_Scenarios.md)
   * 我该如何使用和部署Akka?
   * 原生包

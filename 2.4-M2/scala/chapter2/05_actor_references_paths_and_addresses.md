@@ -1,6 +1,6 @@
 # Actor引用, 路径与地址
 
-本章描述actor如何被确定，以及在一个可能是分布式的actor系统中如何定位。这与 [Actor系统](02_Actor_Systems.md) 的核心概念有关：固有的树形监管结构和跨多个网络节点的actor之间进行透明通讯。
+本章描述actor如何被确定，以及在一个可能是分布式的actor系统中如何定位。这与 [Actor系统](02_Actor_Systems.md) 的核心概念有关：内部监管层次结构和跨多个网络节点的actor之间进行透明通讯。
 
 ![](ActorPath.png)
 

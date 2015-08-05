@@ -1,6 +1,6 @@
 # Akka与Java内存模型
 
-使用包含Scala和Akka在内的Typesafe平台的主要好处是它简化了并发软件的编写过程。本文将讨论Typesafe平台，尤其是Akka是如何在并发应用中访问共享内存的。
+使用包含Scala和Akka在内的 Typesafe 平台的主要好处是它简化了并发软件的编写过程。本文将讨论Typesafe平台，尤其是Akka是如何在并发应用中访问共享内存的。
 
 ###Java内存模型
 在Java 5之前，Java内存模型（JMM）定义是有问题的。当多个线程访问共享内存时很可能得到各种奇怪的结果，例如：
@@ -23,8 +23,8 @@
 
 为了避免actor中的可见性和重排序问题，Akka保证以下两条 “发生在先” 规则:
 
-* **actor发送规则 : **一条消息的发送动作先于同一个actor对同一条消息的接收。
-* **actor后续处理规则: **一条消息的处理先于同一个actor的下一条消息处理
+* **actor发送规则 : ** 一条消息的发送动作先于同一个actor对同一条消息的接收。
+* **actor后续处理规则: ** 一条消息的处理先于同一个actor的下一条消息处理
 
 > 注意
 
@@ -35,9 +35,9 @@
 ###Future与Java内存模型
 一个Future的完成 “先于” 任何注册到它的回调函数的执行。
 
-我们建议不要在回调中捕捉（close over）非final的值 (Java中称final，Scala中称val), 如果你**一定**要捕捉非final的域，则它们必须被标记为*volatile*来让它的当前值对回调代码可见。
+我们建议不要在回调中捕捉（close over）非final的值 (Java中称final，Scala中称val), 如果你选择捕捉非final的字段，则它们必须被标记为*volatile*来让它的当前值对回调代码可见。
 
-如果你捕捉一个引用，你还必须保证它所指代的实例是线程安全的。我们强烈建议远离使用锁的对象，因为它们会引入性能问题，甚至最坏可能造成死锁。这些是使用synchronized的风险。
+如果你捕捉一个引用，你还必须保证它所指代的实例是线程安全的。我们强烈建议远离使用锁的对象，因为它们会引入性能问题，甚至最坏可能造成死锁。这些是使用同步的风险。
 
 ###STM与Java内存模型
 Akka中的软件事务性内存 (STM) 也提供了一条 “发生在先” 规则:
@@ -68,7 +68,7 @@ class MyActor extends Actor {
 
       // 非常错误, 共享可变状态 bug
       // "发送者"是一个可变变量，随每个消息改变
-      Future { expensiveCalculation(sender) }
+      Future { expensiveCalculation(sender()) }
 
       //正确的做法
 
@@ -78,7 +78,7 @@ class MyActor extends Actor {
 
       // 非常安全，我们捕捉了一个固定值
       // 并且它是一个Actor引用，是线程安全的
-      val currentSender = sender
+      val currentSender = sender()
       Future { expensiveCalculation(currentSender) }
   }
 }

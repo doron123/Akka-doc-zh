@@ -36,9 +36,9 @@
   * 重用Actor路径
   * 与远程部署之间的互操作
   * 路径中的地址部分用来做什么？
-  * Actor路径的顶级作用域
+  * Actor路径的顶层作用域
 * [位置透明性](06_Location_Transparency.md)
-  * 天生的分布式
+  * 默认分布式
   * 破坏透明性的方式
   * 远程调用如何使用？
   * Peer-to-Peer vs. Client-Server
@@ -49,7 +49,7 @@
   * Future与Java内存模型
   * STM与Java内存模型
   * Actor与共享的可变状态
-* [消息发送语义](08_Message_Delivery_Reliability.md)
+* [消息传递可靠性](08_Message_Delivery_Reliability.md)
   * 一般规则
   * JVM内（本地）消息发送规则
   * 更高层次的抽象

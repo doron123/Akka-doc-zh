@@ -16,5 +16,5 @@ _book
 *.pdf
 
 # intellij IDEA
-.iml
+*.iml
 .idea

@@ -1,7 +1,7 @@
 # Summary
 
 * [简介](README.md)
-* [引言](2.4-M2/scala/chapter1/introduction.md)
+* [引言](2.4-M2/scala/chapter1/Introduction.md)
    * [Akka是什么?](2.4-M2/scala/chapter1/01_What_is_Akka.md)
    * [为什么使用Akka?](2.4-M2/scala/chapter1/02_Why_Akka.md)
    * [入门](2.4-M2/scala/chapter1/03_Getting_Started.md)

@@ -18,3 +18,5 @@
    * [Akka与Java内存模型](2.4-M2/scala/chapter2/07_Akka_and_the_Java_Memory_Model.md)
    * [消息传递可靠性](2.4-M2/scala/chapter2/08_Message_Delivery_Reliability.md)
    * [配置](2.4-M2/scala/chapter2/09_Configuration.md)
+* [Actors](2.4-M2/scala/chapter3/Actors.md)
+   * [Actors](2.4-M2/scala/chapter3/01_Actors.md)
